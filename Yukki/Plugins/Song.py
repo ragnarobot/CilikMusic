@@ -122,7 +122,6 @@ async def song_right(_, CallbackQuery):
             query_type = 0
         else:
             query_type = int(type + 1)
-        await CallbackQuery.answer("Getting Next Result", show_alert=True)
         (
             title,
             duration_min,
@@ -147,7 +146,6 @@ async def song_right(_, CallbackQuery):
             query_type = 9
         else:
             query_type = int(type - 1)
-        await CallbackQuery.answer("Getting Previous Result", show_alert=True)
         (
             title,
             duration_min,
