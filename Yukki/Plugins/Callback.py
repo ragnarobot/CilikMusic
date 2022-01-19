@@ -63,10 +63,8 @@ async def admin_risghts(_, CallbackQuery):
         )
     chat_id = CallbackQuery.message.chat.id
     if command == "pausecb":
-        if not await is_music_playing(chat_id):
-            return await CallbackQuery.answer(
-                "Music is already Paused", show_alert=True
-            )
+        if not await is_music_playing(chat_id)
+          
         await music_off(chat_id)
         await pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
