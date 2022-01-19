@@ -338,8 +338,7 @@ async def play_playlist(_, CallbackQuery):
             third_name = "Deleted Account"
     elif smex == "Personal":
         if CallbackQuery.from_user.id != int(user_id):
-            return await CallbackQuery.answer(
-                "This is not for you! Play your own playlist", show_alert=True
+            
             )
         _playlist = await get_playlist_names(user_id, type)
         third_name = CallbackQuery.from_user.first_name
