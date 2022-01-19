@@ -264,7 +264,6 @@ async def search_query_more(_, CallbackQuery):
             "Search Your Own Music. You're not allowed to use this button.",
             show_alert=True,
         )
-    await CallbackQuery.answer("Searching More Results")
     results = YoutubeSearch(query, max_results=5).to_dict()
     med = InputMediaPhoto(
         media="Utils/Result.JPEG",
@@ -363,7 +362,6 @@ async def slider_query_results(_, CallbackQuery):
             query_type = 0
         else:
             query_type = int(type + 1)
-        await CallbackQuery.answer("Getting Next Result", show_alert=True)
         (
             title,
             duration_min,
@@ -386,7 +384,6 @@ async def slider_query_results(_, CallbackQuery):
             query_type = 9
         else:
             query_type = int(type - 1)
-        await CallbackQuery.answer("Getting Previous Result", show_alert=True)
         (
             title,
             duration_min,
