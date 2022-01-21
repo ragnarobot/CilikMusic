@@ -63,8 +63,10 @@ async def admin_risghts(_, CallbackQuery):
         )
     chat_id = CallbackQuery.message.chat.id
     if command == "pausecb":
-        if not await is_music_playing(chat_id)
-          
+        if not await is_music_playing(chat_id):
+            return await CallbackQuery.answer(
+                "Music is already Paused", show_alert=True
+            )
         await music_off(chat_id)
         await pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
@@ -336,7 +338,8 @@ async def play_playlist(_, CallbackQuery):
             third_name = "Deleted Account"
     elif smex == "Personal":
         if CallbackQuery.from_user.id != int(user_id):
-            
+            return await CallbackQuery.answer(
+                "This is not for you! Play your own playlist", show_alert=True
             )
         _playlist = await get_playlist_names(user_id, type)
         third_name = CallbackQuery.from_user.first_name
