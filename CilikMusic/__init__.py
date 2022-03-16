@@ -18,7 +18,7 @@ from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
 
 from CilikMusic.Utils.helpers.tasks import install_requirements
-from CilikMusic.Converse.cli import app, userbot
+from CilikMusic.converse.cli import app, userbot
 import config
 from config import (
     API_HASH,
