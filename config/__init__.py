@@ -1,3 +1,0 @@
-#CilikMusic
-
-from .config import *
