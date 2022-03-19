@@ -249,7 +249,7 @@ H_B_1 : "Perintah Admin"
 H_B_2 : "Mainkan Perintah"
 H_B_3 : "Perintah Bot"
 H_B_4 : "Perintah Ekstra"
-H_B_5 : "Tutup Menu"
+H_B_5 : "🗑 Close"
 H_B_6 : "Perintah SudoUser"
 
 #PlayMode
@@ -266,7 +266,7 @@ P_B_4 : "🎵 Putar Daftar Putar"
 #Daftar Putar
 PL_B_1 : "🚀 Putar Daftar Putar"
 PL_B_2 : "✚ Daftar Putar"
-PL_B_3 : "✚ Tambahan"
+PL_B_3 : "🎵 Menu"
 PL_B_4 : "📡 Mode Putar"
 PL_B_5 : "🔄 Hapus Seluruh Daftar Putar"
 PL_B_6 : "↗️ Hapus Daftar Putar"
