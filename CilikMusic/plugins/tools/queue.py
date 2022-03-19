@@ -20,7 +20,7 @@ from config import BANNED_USERS
 from strings import get_command
 from CilikMusic import Carbon, app
 from CilikMusic.misc import db
-from CilikMusic.utils import (Yukkibin, get_channeplayCB,
+from CilikMusic.utils import (Cilikbin, get_channeplayCB,
                               seconds_to_min)
 from CilikMusic.utils.database import (get_cmode, is_active_chat,
                                        is_music_playing)
@@ -216,7 +216,7 @@ async def queued_tracks(client, CallbackQuery: CallbackQuery, _):
             )
         if "🏷" in msg:
             msg = msg.replace("🏷", "")
-        link = await Yukkibin(msg)
+        link = await Cilikbin(msg)
         med = InputMediaPhoto(
             media=link, caption=_["queue_3"].format(link)
         )
