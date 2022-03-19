@@ -25,7 +25,7 @@ from CilikMusic.utils.decorators.language import language, languageCB
 from CilikMusic.utils.inline.playlist import (botplaylist_markup,
                                               get_playlist_markup,
                                               warning_markup)
-from CilikMusic.utils.pastebin import Yukkibin
+from CilikMusic.utils.pastebin import Cilikbin
 from CilikMusic.utils.stream.stream import stream
 
 # Command
