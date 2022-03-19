@@ -25,7 +25,7 @@ from CilikMusic.utils.exceptions import AssistantErr
 from CilikMusic.utils.inline.play import (stream_markup,
                                           telegram_markup)
 from CilikMusic.utils.inline.playlist import close_markup
-from CilikMusic.utils.pastebin import Yukkibin
+from CilikMusic.utils.pastebin import Cilikbin
 from CilikMusic.utils.stream.queue import put_queue, put_queue_index
 from CilikMusic.utils.thumbnails import gen_thumb
 
@@ -127,7 +127,7 @@ async def stream(
         if count == 0:
             return
         else:
-            link = await Yukkibin(msg)
+            link = await Cilikbin(msg)
             lines = msg.count("\n")
             if lines >= 17:
                 car = os.linesep.join(msg.split(os.linesep)[:17])
