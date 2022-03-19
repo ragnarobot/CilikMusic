@@ -29,7 +29,7 @@ def lanuages_keyboard(_):
             callback_data=f"languages:id",
         ),
         InlineKeyboardButton(
-            text="🏴󠁧󠁢󠁥󠁮󠁧󠁿 English"",
+            text="🏴󠁧󠁢󠁥󠁮󠁧󠁿 English",
             callback_data=f"languages:en",
         ),
     )
