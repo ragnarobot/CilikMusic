@@ -7,7 +7,7 @@
 #
 # All rights reserved.
 
-from CilikMusic.core.bot import YukkiBot
+from CilikMusic.core.bot import CilikBot
 from CilikMusic.core.dir import dirr
 from CilikMusic.core.git import git
 from CilikMusic.core.userbot import Userbot
