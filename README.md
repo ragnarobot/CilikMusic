@@ -15,11 +15,10 @@
 
 
 ## String Session :
-[![GenerateStringName](https://img.shields.io/badge/repl.it-generateStringName-white)](https://replit.com/@rizkyhmdanii16/StringSession)
+<p align="left"><a href="https://t.me/CilikStringBot"><img src="https://img.shields.io/badge/Generate%20String%20Session-blue?style=for-the-flat&logo=telegram" width="210" height"34.45" /</a></p>
 
-
-The easy way to host this bot, deploy to Heroku, Change the app country to Europe (it will help to make the bot stable).
-<p align="center">
+## DEPLOY TO HEROKU
+<p align="left">
 <a href="https://dashboard.heroku.com/new?template=https://github.com/grey423/Music-Deploy"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="250""/</a>  
 <a href="https://telegram.dog/XTZ_HerokuBot?start=Z3JleTQyMy9DaWxpa011c2ljIG1hc3Rlcg"><img src="https://img.shields.io/badge/Deploy%20Via%20Telegram-blue?style=for-the-badge&logo=telegram" width="250""/</a>  </p>
 
@@ -35,15 +34,11 @@ The easy way to host this bot, deploy to Heroku, Change the app country to Europ
 <details>
 <summary><b> TAP </b></summary>
 <br>
-- [Yukki](https://github.com/TeamYukki/YukkiMusicBot): YukkiMusic Developer
-- PyTgCalls
 
-#### Open Source codes used in this project 
-- https://github.com/callsmusic/callsmusic : Source code used here as base
-- https://github.com/DevsExpo/FridayUserbot/blob/master/main_startup/helper_func/basic_helpers.py : Functioms from line 275 to 351
-- https://github.com/TheHamkerCat/WilliamButcherBot/blob/dev/wbb/modules/music.py : From lines 170 to 178
+- [Yukki Music](https://github.com/TeamYukki/YukkiMusicBot)  
+- [Pyrogram](https://github.com/pyrogram/pyrogram)
+- [Py-Tgcalls](https://github.com/pytgcalls/pytgcalls)
+- [CallsMusic Team](https://github.com/Callsmusic)
+- [TheHamkerCat](https://github.com/TheHamkerCat)
+- [Charon Baglari](https://github.com/XCBv021)
 
-
-> This project exists thanks to these awesome developers and their codes and contributions.
-> And credits goes to all who supported, all who helped and API & environmental requirement package devs and all projects helped in making this project.
-> Special thanks to you for using bot
