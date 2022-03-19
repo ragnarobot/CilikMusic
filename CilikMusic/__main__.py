@@ -59,9 +59,9 @@ async def init():
         "Successfully Imported Modules "
     )
     await userbot.start()
-    await Cilik.start()
+    await Yukki.start()
     try:
-        await Cilik.stream_call(
+        await Yukki.stream_call(
             "http://docs.evostream.com/sample_content/assets/sintel1m720p.mp4"
         )
     except NoActiveGroupCall:
@@ -71,7 +71,7 @@ async def init():
         sys.exit()
     except:
         pass
-    await Cilik.decorators()
+    await Yukki.decorators()
     LOGGER("CilikMusic").info("Cilik Music Bot Started Successfully")
     await idle()
 
