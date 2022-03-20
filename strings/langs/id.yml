@@ -205,7 +205,7 @@ lyrics_4 : "Klik tombol di bawah ini dan cari lirik untuk menghindari pencarian 
 
 #Ping
 ping_1 : "Pong!!!!"
-ping_2 : "**Pong!**\n`⚡{0} ms`\n\n<b><u>{1} Statistik Sistem:</u></b>\nUptime : {2} \nRam : {3} \nCpu : {4} \nDisk : {5}"
+ping_2 : "**Pong!**\n`⚡{1} ms`\n\n<b><u> System Stats:</u></b>\nUptime : {2} \nRam : {4} \nCpu : {4} \nDisk : {3}"
 
 
 # Lagu
