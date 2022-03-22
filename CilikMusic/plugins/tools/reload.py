@@ -16,9 +16,8 @@ from strings import get_command
 from CilikMusic import app
 from CilikMusic.core.call import Yukki
 from CilikMusic.misc import db
-from CilikMusic.utils.database import get_authuser_names
-from CilikMusic.utils.decorators import language
-from CilikMusic.utils.decorators.admins import AdminActual, ActualAdminCB
+from CilikMusic.utils.database import get_authuser_names, get_cmode
+from CilikMusic.utils.decorators import language, AdminActual, ActualAdminCB
 from CilikMusic.utils.formatters import alpha_to_int
 
 ### Multi-Lang Commands
@@ -63,7 +62,7 @@ async def reload_admin_cache(client, message: Message, _):
 @AdminActual
 async def restartbot(client, message: Message, _):
     mystic = await message.reply_text(
-        f"Harap Tunggu.. Restarting {MUSIC_BOT_NAME} untuk obrolan Anda.."
+        f"Harap Tunggu.. Mulai ulang {MUSIC_BOT_NAME} untuk obrolan Anda.."
     )
     await asyncio.sleep(1)
     try:
@@ -71,6 +70,17 @@ async def restartbot(client, message: Message, _):
         await Yukki.stop_stream(message.chat.id)
     except:
         pass
+    chat_id = await get_cmode(message.chat.id)
+    if chat_id:
+        try:
+            await app.get_chat(chat_id)
+        except:
+            pass
+        try:
+            db[chat_id] = []
+            await Yukki.stop_stream(chat_id)
+        except:
+            pass
     return await mystic.edit_text(
         "Berhasil memulai ulang. Coba mainkan sekarang.."
     )
@@ -110,7 +120,7 @@ async def stop_download(client, CallbackQuery: CallbackQuery, _):
             except:
                 pass
             await CallbackQuery.answer("Mengunduh Dibatalkan", show_alert=True)
-            return await CallbackQuery.edit_message_text(f"Unduh Dibatalkan oleh {CallbackQuery.from_user.mention}")
+            return await CallbackQuery.edit_message_text(f"Download Cancelled by {CallbackQuery.from_user.mention}")
         except:
             return await CallbackQuery.answer("Gagal menghentikan Pengunduhan.", show_alert=True)
     await CallbackQuery.answer("Gagal mengenali tugas yang sedang berjalan", show_alert=True)
