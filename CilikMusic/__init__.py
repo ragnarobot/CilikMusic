@@ -9,7 +9,6 @@
 
 from CilikMusic.core.bot import CilikBot
 from CilikMusic.core.dir import dirr
-from CilikMusic.core.git import git
 from CilikMusic.core.userbot import Userbot
 from CilikMusic.misc import dbb, heroku, sudo
 
@@ -18,8 +17,6 @@ from .logging import LOGGER
 # Directories
 dirr()
 
-# Check Git Updates
-git()
 
 # Initialize Memory DB
 dbb()
