@@ -75,7 +75,7 @@ admin_34 : "Gagal mencari seek saat ini."
 
 # Awal
 start_1 : "Terima kasih telah menerima saya di {0}.\n{1} masih hidup.\n\nUntuk bantuan atau bantuan apa pun, periksa grup dan saluran dukungan kami."
-start_2 : "Halo, Nama saya {0}.\n\nSaya bot streaming telegram dengan beberapa fitur berguna. Platform pendukung seperti Youtube, Spotify, Resso, AppleMusic , Soundcloud dll.\n\nJangan ragu untuk menambahkan saya ke kelompokmu."
+start_2 : "**Halo, Nama saya {0}.**\n\nSaya bot streaming telegram dengan beberapa fitur berguna. Platform pendukung seperti Youtube, Spotify, Resso, AppleMusic , Soundcloud dll.\n\nJangan ragu untuk menambahkan saya ke kelompokmu."
 start_3 : "Selamat datang di {0}\n\nSaya tidak memerlukan **izin admin** untuk bekerja ( sampai diminta ).\n\nNama Pengguna Asisten:- @{1}\nID Asisten:- {2} "
 start_4 : "Pemilik {0}[{1}] baru saja bergabung dengan obrolan Anda."
 start_5 : "Anggota Pengguna Sudo {0}[{1}] baru saja bergabung dengan obrolan Anda."
@@ -282,10 +282,10 @@ PL_B_4 : "📡 Mode Putar"
 PL_B_5 : "🔄 Hapus Seluruh Daftar Putar"
 PL_B_6 : "↗️ Hapus Daftar Putar"
 PL_B_7 : "❗️ Ya, saya yakin. Hapus saja"
-PL_B_8 : "🔢 Mainkan Top 10"
-PL_B_9 : "🤖 Mainkan 10 Lagu Top"
+PL_B_8 : "🔢 Play Top 10"
+  PL_B_9 : "🤖 Play Lagu Top 10"
 PL_B_10 : "🏘 10 Lagu Top Grups"
-PL_B_11 : "👤 Mainkan 10 Lagu Top Pribadi"
+PL_B_11 : "👤 Play 10 Lagu Top Pribadi"
 
 #Pengaturan
 ST_B_1 : "🔊 Kualitas Audio"
