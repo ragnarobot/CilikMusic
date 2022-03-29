@@ -19,11 +19,10 @@ playmodedb = mongodb.playmode
 playtypedb = mongodb.playtypedb
 langdb = mongodb.language
 authdb = mongodb.adminauth
-videodb = mongodb.cilikvideocalls
+videodb = mongodb.yukkivideocalls
 onoffdb = mongodb.onoffper
 suggdb = mongodb.suggestion
 autoenddb = mongodb.autoend
-
 
 # Shifting to memory [ mongo sucks often]
 loop = {}
@@ -44,6 +43,7 @@ vlimit = []
 maintenance = []
 suggestion = {}
 autoend = {}
+
 
 
 # Auto End Stream
@@ -77,9 +77,8 @@ async def autoend_off():
     if user:
         return await autoenddb.delete_one({"chat_id": chat_id})
 
-
+    
 # SUGGESTION
-
 
 async def is_suggestion(chat_id: int) -> bool:
     mode = suggestion.get(chat_id)
@@ -97,7 +96,7 @@ async def suggestion_on(chat_id: int):
     suggestion[chat_id] = True
     user = await suggdb.find_one({"chat_id": chat_id})
     if user:
-        return await suggdb.delete_one({"chat_id": chat_id})
+       return await suggdb.delete_one({"chat_id": chat_id})
 
 
 async def suggestion_off(chat_id: int):
