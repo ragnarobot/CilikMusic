@@ -9,7 +9,7 @@
 import asyncio
 
 from pyrogram import filters
-from pyrogram.types import Message, CallbackQuery
+from pyrogram.types import CallbackQuery, Message
 
 from config import BANNED_USERS, MUSIC_BOT_NAME, adminlist, lyrical
 from strings import get_command
@@ -17,7 +17,8 @@ from CilikMusic import app
 from CilikMusic.core.call import Yukki
 from CilikMusic.misc import db
 from CilikMusic.utils.database import get_authuser_names, get_cmode
-from CilikMusic.utils.decorators import language, AdminActual, ActualAdminCB
+from CilikMusic.utils.decorators import (ActualAdminCB, AdminActual,
+                                         language)
 from CilikMusic.utils.formatters import alpha_to_int
 
 ### Multi-Lang Commands
@@ -103,15 +104,23 @@ async def close_menu(_, CallbackQuery):
     except:
         return
 
-@app.on_callback_query(filters.regex("stop_downloading") & ~BANNED_USERS)
+
+@app.on_callback_query(
+    filters.regex("stop_downloading") & ~BANNED_USERS
+)
 @ActualAdminCB
 async def stop_download(client, CallbackQuery: CallbackQuery, _):
     message_id = CallbackQuery.message.message_id
     task = lyrical.get(message_id)
-    if not task: 
-        return await CallbackQuery.answer("Mengunduh sudah Selesai.", show_alert=True)
+    if not task:
+        return await CallbackQuery.answer(
+            "Mengunduh sudah Selesai.", show_alert=True
+        )
     if task.done() or task.cancelled():
-        return await CallbackQuery.answer("Mengunduh sudah Selesai atau Dibatalkan.", show_alert=True)
+        return await CallbackQuery.answer(
+            "Mengunduh sudah Selesai atau Dibatalkan.",
+            show_alert=True,
+        )
     if not task.done():
         try:
             task.cancel()
@@ -119,8 +128,16 @@ async def stop_download(client, CallbackQuery: CallbackQuery, _):
                 lyrical.pop(message_id)
             except:
                 pass
-            await CallbackQuery.answer("Mengunduh Dibatalkan", show_alert=True)
-            return await CallbackQuery.edit_message_text(f"Download Cancelled by {CallbackQuery.from_user.mention}")
+            await CallbackQuery.answer(
+                "Mengunduh Dibatalkan", show_alert=True
+            )
+            return await CallbackQuery.edit_message_text(
+                f"Unduh Dibatalkan oleh {CallbackQuery.from_user.mention}"
+            )
         except:
-            return await CallbackQuery.answer("Gagal menghentikan Pengunduhan.", show_alert=True)
-    await CallbackQuery.answer("Gagal mengenali tugas yang sedang berjalan", show_alert=True)
+            return await CallbackQuery.answer(
+                "Gagal menghentikan Pengunduhan.", show_alert=True
+            )
+    await CallbackQuery.answer(
+        "Gagal mengenali tugas yang sedang berjalan", show_alert=True
+    )
