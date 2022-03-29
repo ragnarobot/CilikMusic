@@ -1,3 +1,11 @@
+#
+# Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
+#
+# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
+# and is released under the "GNU v3.0 License Agreement".
+# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
+#
+# All rights reserved.
 
 import asyncio
 import os
@@ -94,9 +102,7 @@ async def ping_com(client, message: Message, _):
         else "\nKlik tombol di bawah ini untuk mendapatkan seluruh daftar antrian."
     )
     cap = f"""**{config.MUSIC_BOT_NAME} Player**
-
 🎥**Playing:** {title}
-
 🔗**Stream Type:** {typo}
 🙍‍♂️**Played By:** {user}
 {send}"""
@@ -222,8 +228,9 @@ async def queued_tracks(client, CallbackQuery: CallbackQuery, _):
         )
 
 
-
-@app.on_callback_query(filters.regex("queue_back_timer") & ~BANNED_USERS)
+@app.on_callback_query(
+    filters.regex("queue_back_timer") & ~BANNED_USERS
+)
 @languageCB
 async def queue_back(client, CallbackQuery: CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
@@ -273,9 +280,7 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
         else "\nKlik tombol di bawah ini untuk mendapatkan seluruh daftar antrian."
     )
     cap = f"""**{config.MUSIC_BOT_NAME} Player**
-
 🎥**Playing:** {title}
-
 🔗**Stream Type:** {typo}
 🙍‍♂️**Played By:** {user}
 {send}"""
@@ -293,10 +298,10 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
     )
     basic[videoid] = True
 
-    med = InputMediaPhoto(
-        media=IMAGE, caption=cap
+    med = InputMediaPhoto(media=IMAGE, caption=cap)
+    mystic = await CallbackQuery.edit_message_media(
+        media=med, reply_markup=upl
     )
-    mystic = await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
     if DUR != "Unknown":
         try:
             while db[chat_id][0]["vidid"] == videoid:
