@@ -31,6 +31,7 @@ async def auto_end_stream(client, message):
         await autoend_on()
         await message.reply_text(
             "Auto End Stream Diaktifkan.\n\nBot akan meninggalkan obrolan suara secara otomatis setelah 3 menit jika tidak ada yang mendengarkan dengan pesan peringatan.."
+        )
     elif state == "disable":
         await autoend_off()
         await message.reply_text("Auto End Dinonaktifkan.")
