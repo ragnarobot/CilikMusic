@@ -165,10 +165,7 @@ autoclean = []
 
 
 # Images
-START_IMG_URL = getenv(
-    "START_IMG_URL",
-    "assets/cilik.jpg",
-)
+START_IMG_URL = getenv("START_IMG_URL", None)
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
