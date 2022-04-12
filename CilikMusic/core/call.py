@@ -334,6 +334,10 @@ class Call(PyTgCalls):
             if not check:
                 await _clear_(chat_id)
                 return await client.leave_group_call(chat_id)
+                await app.send_message(
+                    chat_id,
+                    "**✅ Antrian kosong.\n\n• Assistant meninggalkan obrolan suara**",
+                )
         except:
             try:
                 await _clear_(chat_id)
