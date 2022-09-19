@@ -103,7 +103,7 @@ packages
 node
 repo
 installation
-pprint "\n\n\n\n\Cilik Music Bot Installation Completed!" "cgreen"
+pprint "\n\n\n\n\nCilik Music Bot Installation Completed!" "cgreen"
 sleep 4
 clear
 
