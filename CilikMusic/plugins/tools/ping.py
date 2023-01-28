@@ -46,49 +46,66 @@ async def ping_com(client, message: Message, _):
         )
     )
 
+def get_arg(message: Message):
+    msg = message.text
+    msg = msg.replace(" ", "", 1) if msg[1] == " " else msg
+    split = msg[1:].replace("\n", " \n").split(" ")
+    if " ".join(split[1:]).strip() == "":
+        return ""
+    return " ".join(split[1:])
 
-
-   
-tagallgcid = []
-
+spam_chats = []
 
 @app.on_message(
-    filters.command(["all", "cancel"], ["/"])
+    filters.command("all", "/")
     & filters.group
     & ~filters.edited
     & ~BANNED_USERS
 )
-async def tagcom(client, message: Message):
-    if message.command[0] == "all":
-        if message.chat.id in tagallgcid:
-            return
-        tagallgcid.append(message.chat.id)
-        text = message.text.split(None, 1)[1] if len(message.text.split()) != 1 else ""
-        users = [
-            member.user.mention
-            async for member in message.chat.get_members()
-            if not (member.user.is_bot or member.user.is_deleted)
-        ]
-        shuffle(users)
-        m = message.reply_to_message or message
-        for output in [users[i : i + 5] for i in range(0, len(users), 5)]:
-            if message.chat.id not in tagallgcid:
-                break
-            await asyncio.sleep(1.5)
-            await m.reply_text(
-                ", ".join(output) + "\n\n" + text, quote=bool(message.reply_to_message)
-            )
+async def tag_com(client, message: Message):
+    await message.delete()
+    chat_id = message.chat.id
+    rep = message.reply_to_message
+    text = get_arg(message)
+    if not rep and not text:
+        return await message.reply("**Berikan Sebuah Teks atau Reply**")
+
+    spam_chats.append(chat_id)
+    usrnum = 0
+    usrtxt = ''
+    async for usr in client.iter_chat_members(chat_id):
+        if not chat_id in spam_chats:
+            break
+        usrnum += 1
+        usrtxt += f"[{usr.user.first_name}](tg://user?id={usr.user.id}), "
+        if usrnum == 5:
+            if text:
+                txt = f"{text}\n{usrtxt}"
+                await app.send_message(chat_id, txt)
+            elif rep:
+                await rep.reply(usrtxt)
+            await sleep(2)
+            usrnum = 0
+            usrtxt = ''
+    try:
+        spam_chats.remove(chat_id)
+    except:
+        pass
+    
+    
+@app.on_message(
+    filters.command("cancel", "/")
+    & filters.group
+    & ~filters.edited
+    & ~BANNED_USERS
+)
+async def tag_cancel(client, message: Message):
+    if not message.chat.id in spam_chats:
+        return await message.reply("__Not Tagall.__")
+    else:
         try:
-            tagallgcid.remove(message.chat.id)
-        except Exception:
+            spam_chats.remove(message.chat.id)
+        except:
             pass
-    elif message.command[0] == "cancel":
-        if message.chat.id not in tagallgcid:
-            return await message.reply_text(
-                "Tidak ada mentions"
-            )
-        try:
-            tagallgcid.remove(message.chat.id)
-        except Exception:
-            pass
-        await message.reply_text("<b>Stoped.</b>")
+        return await message.reply("__Stopped Mention.__")    
+    
