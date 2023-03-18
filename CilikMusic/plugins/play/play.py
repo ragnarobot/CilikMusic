@@ -217,7 +217,7 @@ async def play_commnd(
                 and not config.SPOTIFY_CLIENT_SECRET
             ):
                 return await mystic.edit_text(
-                    "Bot ini tidak dapat memainkan kueri spotify. Tolong minta pemilik saya untuk mengaktifkan spotify."
+                    "This bot can't play spotify queries. Please ask my owner to activate spotify."
                 )
             if "track" in url:
                 try:
@@ -338,7 +338,7 @@ async def play_commnd(
                 await Cilik.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(
-                    "Ada masalah dengan bot. Silakan laporkan ke pemilik saya dan minta mereka untuk memeriksa grup logger."
+                    "There is a problem with bots. Please report it to my owner and ask them to check the logger group."
                 )
                 return await app.send_message(
                     config.LOG_GROUP_ID,
@@ -591,7 +591,7 @@ async def play_music(client, CallbackQuery, _):
 async def anonymous_check(client, CallbackQuery):
     try:
         await CallbackQuery.answer(
-            "Anda adalah Admin Anonim\n\nBuka pengaturan grup Anda \n-> Daftar Administrator \n-> Klik nama Anda \n-> hapus centang tombol TELAH ANONIM di sana.",
+            "You are Anonymous Admin\n\nGo to your group settings \n-> List of Administrators \n-> Click on your name \n-> uncheck ALREADY ANONYMOUS button there.",
             show_alert=True,
         )
     except:
