@@ -41,7 +41,7 @@ async def init():
         and not config.SPOTIFY_CLIENT_SECRET
     ):
         LOGGER("CilikMusic").warning(
-            "Tidak ada Spotify Vars yang ditentukan. Bot Anda tidak akan dapat memainkan kueri spotify."
+            "No Spotify Vars defined. Your bot will not be able to play spotify queries."
         )
     try:
         users = await get_gbanned()
@@ -66,7 +66,7 @@ async def init():
         )
     except NoActiveGroupCall:
         LOGGER("CilikMusic").error(
-            "[ERROR] - \n\nHarap aktifkan Obrolan Suara Grup Logger Anda. Pastikan Anda tidak pernah menutup/mengakhiri panggilan suara di grup log Anda"
+            "[ERROR] - \n\nPlease enable your Logger Group Voice Chat. Make sure you never hang up/end voice calls in your log groups"
         )
         sys.exit()
     except:
