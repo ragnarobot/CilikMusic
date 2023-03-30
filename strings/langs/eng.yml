@@ -75,7 +75,7 @@ admin_34 : "⛔️ Failed to seek the current stream."
 
 # Start
 start_1 : "❤️ Thanks for having me in {0}.\n{1} is alive.\n\nFor any assistance or help, checkout our support group and channel."
-start_2 : "👋🏻 Hello, My name is {0}.\n\nI'm a telegram streaming bot with some useful features. Supporting platforms like Youtube, Spotify, Resso, AppleMusic , Soundcloud etc.\n\nFeel free to add me to your groups."
+start_2 : ""
 start_3 : "Welcome To {0}\n\nI don't need any **admin permission** to work ( until asked for ).\n\nAssistant Username:- @{1}\nAssistant ID:- {2}"
 start_4 : "{0}'s Owner[{1}] has just joined your chat."
 start_5 : "A member of {0}'s Sudo User[{1}] has just joined your chat."
@@ -83,7 +83,7 @@ start_6 : "❗️ **Supergroup Needed** ❗️\n\nPlease convert your **group** 
 start_7 : "**Blacklisted Chat**\n\nYou're chat has been blacklisted by the Bot. Please ask any SudoUser to whitelist chat first. Check [Sudolist from here]({0})"
 
 # Help
-help_1 : "Click on the buttons below for more information. If you're facing any problem in command you can contact my bot owner or ask in support chat.\n\nAll commands can be used with: /"
+help_1 : ""
 help_2 : "Contact me in PM for help."
 
 # Settings
@@ -246,22 +246,22 @@ UNBAN_BUTTON : "🗑 Unban Assistant"
 L_B_1 : "🚀 Checkout Lyrics"
 
 # Start
-S_B_1 : "🗒 Commands"
-S_B_2 : "🔧 Settings"
-S_B_3 : "📨 Support"
-S_B_4 : "📨 Channel"
-S_B_5 : "✚ Add me to your Group"
-S_B_6 : "💾 Git Repo"
-S_B_7 : "🧸 Bot Owner"
-S_B_8 : "🗂 Commands Menu"
+S_B_1 : ""
+S_B_2 : ""
+S_B_3 : ""
+S_B_4 : ""
+S_B_5 : ""
+S_B_6 : ""
+S_B_7 : ""
+S_B_8 : ""
 
 #Help 
-H_B_1 : "👨🏻‍✈️ Admin Commands"
-H_B_2 : "▶️ Play Commands"
-H_B_3 : "🤖 Bot Commands"
-H_B_4 : "🗃 Extra Commands"
-H_B_5 : "🗑 Close"
-H_B_6 : "🦸🏻‍♂️ SudoUser Commands"
+H_B_1 : ""
+H_B_2 : ""
+H_B_3 : ""
+H_B_4 : ""
+H_B_5 : ""
+H_B_6 : ""
 
 #PlayMode
 PM_B_1 : "DirectPlay"
