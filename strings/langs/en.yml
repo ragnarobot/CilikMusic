@@ -256,12 +256,12 @@ S_B_7 : ""
 S_B_8 : ""
 
 #Help 
-H_B_1 : ""
-H_B_2 : ""
-H_B_3 : ""
-H_B_4 : ""
-H_B_5 : ""
-H_B_6 : ""
+H_B_1 : "👨🏻‍✈️ Admin Commands"
+H_B_2 : "▶️ Play Commands"
+H_B_3 : "🤖 Bot Commands"
+H_B_4 : "🗃 Extra Commands"
+H_B_5 : "🗑 Close"
+H_B_6 : "🦸🏻‍♂️ SudoUser Commands"
 
 #PlayMode
 PM_B_1 : "DirectPlay"
